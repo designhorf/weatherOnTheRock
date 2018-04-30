@@ -1,0 +1,71 @@
+$widgetExtra: #2a3c41;
+
+$lightBlue: #3bcfd4;
+$darkBlue: #3023ae;
+$lightPurple: #683bd4;
+
+$highlightDark: #291d9b;
+$highlightLight: #5a2fc2;
+
+.city {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.date {
+    text-align: center;
+    font-weight: 300;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.img-icon {
+    height: 55px;
+    margin-bottom: 8px;
+}
+
+.description {
+    font-size: .9em;
+    font-weight: 300;
+}
+
+.temperature {
+    font-size: 6em;
+    font-weight: 700;
+}
+
+.widget-extra {
+    align-items: center;
+    // background-color: darken($widgetExtra, 10%);
+    background: linear-gradient(to right, $darkBlue, $lightPurple);
+    box-sizing: border-box;
+    display: flex;
+    font-weight: 200;
+    height: 50px;
+    justify-content: space-between;
+    margin-left: -30px;
+    padding: 0 30px;
+    width: 100vw;
+
+    &-box {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &-icon {
+        margin-right: 10px;
+    }
+}

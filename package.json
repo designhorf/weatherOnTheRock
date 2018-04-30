@@ -1,0 +1,37 @@
+{
+  "name": "wetherapitest",
+  "version": "1.0.0",
+  "description": "weather page malta",
+  "main": "index.js",
+  "author": "designhorf <designhorf@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "moment": "^2.22.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-hot-loader": "^4.0.1",
+    "webpack-dev-server": "^2.4.5",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "compression-webpack-plugin": "^1.1.11",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.2.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.20.3",
+    "webpack": "^3.0.0"
+  }
+}

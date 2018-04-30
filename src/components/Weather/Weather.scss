@@ -1,0 +1,59 @@
+$widgetExtra: #2a3c41;
+
+$lightBlue: #3bcfd4;
+$darkBlue: #3023ae;
+$lightPurple: #683bd4;
+
+$highlightDark: #291d9b;
+$highlightLight: #5a2fc2;
+
+.widget {
+    margin: 0;
+}
+
+* {
+    -webkit-margin-after: 0;
+    -webkit-margin-before: 0;
+}
+
+.five-days-forecast {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: -30px;
+    margin-top: 30px;
+    width: 100vw;
+
+    &-widget {
+        align-items: center;
+        // background-color: lighten(red, 30%);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 0;
+        width: 20vw;
+    }
+
+    .five-days {
+        &-icon {
+            height: 25px;
+            margin-bottom: 5px;
+        }
+
+        &-temp {
+            margin-bottom: 2px;
+        }
+
+        &-day {
+            font-size: .6em;
+            font-weight: 300;
+        }
+    }
+}
+
+.active-widget {
+    background: linear-gradient(to bottom, $highlightLight, $highlightDark);
+}

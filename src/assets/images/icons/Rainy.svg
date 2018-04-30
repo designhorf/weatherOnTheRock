@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="19px" viewBox="0 0 14 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Rain</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rain" transform="translate(1.000000, 0.000000)" stroke="#FFFFFF" stroke-width="0.528000018">
+            <path d="M0.049787234,10.836 C0.049787234,7.26175385 2.72119149,4.36430769 6.01659574,4.36430769 C9.312,4.36430769 11.9834043,7.26175385 11.9834043,10.836" id="Shape"></path>
+            <path d="M8.08570213,16.6865538 C8.08570213,16.6865538 8.08570213,17.8607077 7.02714894,17.8607077 C5.96859574,17.8607077 6.01659574,16.7906769 6.01659574,16.7906769 L6.01659574,12.4069846 L6.01659574,10.836" id="Shape"></path>
+            <path d="M3.53489362,0.161446154 L1.41293617,2.46267692" id="Shape"></path>
+            <path d="M6.35387234,0.161446154 L4.23191489,2.46267692" id="Shape"></path>
+            <path d="M9.17285106,0.161446154 L7.05089362,2.46267692" id="Shape"></path>
+            <path d="M11.9918298,0.161446154 L9.86987234,2.46267692" id="Shape"></path>
+        </g>
+    </g>
+</svg>
