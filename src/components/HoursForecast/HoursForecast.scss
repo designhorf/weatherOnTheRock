@@ -1,0 +1,38 @@
+$smallText: #cacaca;
+
+.three-hours {
+    &-forecast {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        margin-left: -30px;
+        margin-top: 30px;
+        padding: 0 20px;
+        width: 100vw;
+
+        &-widget {
+            align-items: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+    }
+
+    &-small-text {
+        color: $smallText;
+        font-size: .65em;
+        text-transform: capitalize;
+    }
+    
+    &-paragraph {
+        font-size: .9em;
+        margin-bottom: 5px;
+    }
+    
+    &-info-box {
+        text-align: center;
+    }
+}
+
