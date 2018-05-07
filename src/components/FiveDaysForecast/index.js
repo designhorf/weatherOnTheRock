@@ -1,1 +1,1 @@
-export {default} from './FiveDaysForecast.jsx';
+export { default } from './FiveDaysForecast.jsx';
