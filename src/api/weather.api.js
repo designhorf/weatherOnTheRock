@@ -11,6 +11,7 @@ export function getFiveDaysForecast () {
         .then(response => response.json())
         .then(data => data.list)
         .then(dataList => {
+            console.log(dataList);
             return dataList.filter(day => Number(moment.unix(day.dt).format('kk')) === 14);
         })
         .then(days => {
@@ -30,17 +31,47 @@ export function getFiveDaysForecast () {
         });
 }
 
+export function getThreeHoursForecast (activeDay) {
+    return fetch(API_URL_FIVE_DAYS)
+        .then(response => response.json())
+        .then(data => data.list)
+        .then(dataList => {
+            return dataList.filter(day => moment.unix(day.dt).format('dddd') === activeDay);
+        })
+        .then(days => {
+            return days.map(day => {
+                const weatherType = day.weather[0].main;
+                const mainTemperature = day.main.temp.toFixed(0);
+                const hour = Number(moment.unix(day.dt).format('HH')) + 1;
+                const windSpeed = (day.wind.speed * 3.6).toFixed(0);
+                const humidity = day.main.humidity;
+                const dayAsString = moment.unix(day.dt).format('dddd');
+                const timestamp = day.dt;
+
+                return {
+                    icon: `./assets/images/icons/${ weatherType }.svg`,
+                    mainTemperature,
+                    hour,
+                    windSpeed,
+                    humidity,
+                    dayAsString,
+                    timestamp
+                }
+            });
+        });
+}
+
 export function getCurrentWeather () {
     return fetch(API_URL)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             const cityName = data.name;
             const icon = data.weather[0].main;
-            const windSpeed = data.wind.speed;
+            // converted m/s to km/h
+            const windSpeed = data.wind.speed * 3.6;
             const windDirection = data.wind.deg;
             const humidity = data.main.humidity;
-            const temperature = data.main.temp;
+            const temperature = data.main.temp.toFixed(0);
 
             return {
                 city: cityName,
@@ -53,70 +84,12 @@ export function getCurrentWeather () {
         });
 }
 
-    
-
-
-    // let displayWind = function (data) {
-    //     const windDirectionIcon = document.getElementById('windDirectionIcon')          
-    //     const windSpeedElement = document.getElementById('windDirectionValue')          // Wind Speed
-    //     const wind = data.wind
-    //     const windSpeed = wind.speed*3.6
-
-    //     windDirectionIcon.style.transform = `rotate(${wind.deg}deg)`
-    //     windSpeedElement.innerHTML = `${windSpeed.toFixed(2)} km/h`
-    // };
-
-    // let displayTemperature = function (data) {
-    //     const temp = data.main;
-    //     const temperature = document.getElementById('temp');
-    //     temperature.innerHTML = `${temp.temp}°`;
-    // };
 
     // fetch(`${API_URL}`)
     //     .then(function (response) { 
     //         return response.json(); 
     //     })
     //     .then(function (data) {
-    //         console.log(data)
-
-    //         const date = document.getElementById('date')
-    //         date.innerHTML = `${moment().format('dddd')} - ${moment().format('DD MMMM')}`   // Date
-
-    //         // apiData.push({'name': data.name})
-    //         // console.log(apiData)
-
-    //         // City
-    //         // console.log(data.name)
-    //         const city = document.getElementById('city');
-    //         city.innerHTML = data.name;                                                     // City Name
-
-    //         // Humidity + Temperature
-    //         const temp = data.main
-    //         // console.log(temp.temp)
-    //         // console.log(`${temp.humidity}%`)
-    //         const humidity = document.getElementById('humidityValue')
-    //         humidity.innerHTML = `${temp.humidity}%`                                        // Humidity
-
-    //         // Temperature
-    //         displayTemperature(data);
-
-    //         // Weather Icon + description            
-    //         // Weather type
-    //         const weather = data.weather[0]
-    //         const desc = document.getElementById('description')
-    //         desc.innerHTML = weather.main                                                   // Cloudy, etc.
-    //         // console.log(weather.main)
-
-    //         // Icon
-    //         const imgIcon = document.getElementById('imgIcon');
-    //         imgIcon.setAttribute('src', `./assets/images/icons/${weather.main}.svg`);       // Icon
-    //         if (weather.description == 'few clouds') {
-    //             const icon = document.getElementById('icon');
-    //             // icon.setAttribute('src', './assets/images/icons/fewclouds.svg');
-    //         }
-
-    //         displayWind(data)
-
     //         // Sunrise - Sunset
     //         let timee = data.sys
     //         let sunrise = Number(timee.sunrise)
