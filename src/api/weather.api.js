@@ -72,6 +72,7 @@ export function getCurrentWeather () {
             const windDirection = data.wind.deg;
             const humidity = data.main.humidity;
             const temperature = data.main.temp.toFixed(0);
+            const currentDate = `${ moment().format('dddd') } - ${ moment().format('DD')} ${ moment().format('MMMM') }`;
 
             return {
                 city: cityName,
@@ -79,33 +80,8 @@ export function getCurrentWeather () {
                 temperature: temperature,
                 humidity: humidity,
                 windSpeed: windSpeed,
-                windDirection: windDirection
+                windDirection: windDirection,
+                currentDate: currentDate
             }
         });
 }
-
-
-    // fetch(`${API_URL}`)
-    //     .then(function (response) { 
-    //         return response.json(); 
-    //     })
-    //     .then(function (data) {
-    //         // Sunrise - Sunset
-    //         let timee = data.sys
-    //         let sunrise = Number(timee.sunrise)
-    //         let sunset = Number(timee.sunset)
-            
-    //         function convertTimeStamp (number) {
-    //             let date = new Date(number * 1000),
-    //                 hours = date.getHours(),
-    //                 minutes = `0  ${date.getMinutes()}`,
-    //                 formattedTime = `${hours}:${minutes.substr(-2)}`;
-
-    //             // console.log(formattedTime)
-
-    //             return formattedTime
-    //         }
-
-    //         convertTimeStamp(sunrise)
-    //         convertTimeStamp(sunset)
-    //     });

@@ -32,7 +32,7 @@ export default class CurrentWeather extends Component {
         return (
             <div>
                 <h1 className="city">{ currentWeather.city }</h1>
-                <p className="date"></p>
+                <p className="date">{ currentWeather.currentDate }</p>
 
                 <section className="main-info">
                      <div className="icon">
