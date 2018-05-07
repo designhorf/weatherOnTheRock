@@ -1,1 +1,1 @@
-export {default} from './DailyForecast.jsx';
+export { default } from './DailyForecast.jsx';
