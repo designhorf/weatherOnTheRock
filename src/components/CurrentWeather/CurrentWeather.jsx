@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getCurrentWeather } from '../../api';
+import CurrentDetails from '../CurrentDetails';
 import './CurrentWeather.scss';
 
 export default class CurrentWeather extends Component {
@@ -20,7 +21,7 @@ export default class CurrentWeather extends Component {
     render () {
         const { currentWeather } = this.state;
 
-        console.log(currentWeather);
+        // console.log(currentWeather);
 
         if (currentWeather.length === 0) {
             return (
@@ -42,20 +43,33 @@ export default class CurrentWeather extends Component {
                  </section>
 
                  <section className="widget-extra">
-                     <div className="widget-extra-box humidity">
-                         <img src="./assets/images/icons/Humidity.svg" alt="" className="widget-extra-icon humidity-icon"/>
-                         <p className="humidity-value">{ currentWeather.humidity }</p>
-                     </div>
+                    <CurrentDetails 
+                        type = 'humidity'
+                        icon = 'Humidity'
+                        format = '%'
+                        value = { currentWeather.humidity }
+                    />
 
-                     <div className="widget-extra-box wind-direction">
-                         <img src="./assets/images/icons/Wind-Direction.svg" alt="" className="widget-extra-icon wind-direction-icon"/>
-                         <p className="wind-direction-value">{ currentWeather.windSpeed }</p>
-                     </div>
+                    <CurrentDetails 
+                        type = 'wind-speed'
+                        icon = 'Wind-Direction'
+                        windDirection = { currentWeather.windDirection }
+                        format = 'km/h'
+                        value = { currentWeather.windSpeed.toFixed(0) }
+                    />
 
-                     <div className="widget-extra-box wind-speed">
-                         <img src="./assets/images/icons/Rainy.svg" alt="" className="widget-extra-icon wind-speed-icon"/>
-                         <p className="wind-speed-value"></p>
-                     </div>
+                    <CurrentDetails 
+                        type = 'wind-speed'
+                        icon = 'Rainy'
+                        format = 'km/h'
+                        value = { currentWeather.windSpeed.toFixed(0) }
+                    />
+
+                    
+                    {/* <div className="widget-extra-box wind-speed">
+                        <img src="./assets/images/icons/Rainy.svg" alt="" className="widget-extra-icon wind-speed-icon"/>
+                        <p className="wind-speed-value"></p>
+                    </div> */}
                  </section>
             </div>    
         );
