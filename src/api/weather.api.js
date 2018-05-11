@@ -6,12 +6,52 @@ const API_BASE_URL = 'https://api.openweathermap.org/data/2.5/';
 const API_URL = `${ API_BASE_URL }/weather?id=${ API_KEY }&units=metric&APPID=${ APP_ID }`;
 const API_URL_FIVE_DAYS = `${ API_BASE_URL }/forecast?id=${ API_KEY }&units=metric&APPID=${ APP_ID }`;
 
+// const FIREBASE_DATABASE_NAME = 'testfbase-4df92';
+// const FIREBASE_API_KEY = 'AIzaSyC6hQ7AiUH5C4scA8UPU1yqtYWb_hhXxxM';
+// const FIREBASE_AUTH_DOMAIN = `${ FIREBASE_DATABASE_NAME }.firebaseapp.com`;
+// const FIREBASE_DATABASE_URL = `https://${ FIREBASE_DATABASE_NAME }.firebaseio.com`;
+// const FIREBASE_PROJECT_ID = '';
+// const FIREBASE_STORAGE_BUCKET = `${ FIREBASE_DATABASE_NAME }.appspot.com`;
+// const FIREBASE_MESSAGING_SENDER_ID = '103034036295';
+
+// (function () {
+//     const Firebase_config = {
+//         apiKey: FIREBASE_API_KEY,
+//         authDomain: FIREBASE_AUTH_DOMAIN,
+//         databaseURL: FIREBASE_DATABASE_URL,
+//         projectId: FIREBASE_PROJECT_ID,
+//         storageBucket: FIREBASE_STORAGE_BUCKET,
+//         messagingSenderId: FIREBASE_MESSAGING_SENDER_ID
+//     };
+    
+//     firebase.initializeApp(Firebase_config);
+
+//     let ref = firebase.database().ref('history');
+
+//     ref.on('value', gotData, errorData);
+
+//     function gotData (data) {
+//         const temps = data.val();
+//         const tempsArray = Object.values(temps);
+//         console.log(tempsArray);
+
+//         tempsArray.map(akarmi => {
+//             console.log(akarmi);
+//         });
+//     }
+
+//     function errorData (data) {
+//         console.log('Error');
+//         console.log(err);
+//     }
+// })();
+
 export function getFiveDaysForecast () {
     return fetch(API_URL_FIVE_DAYS)
         .then(response => response.json())
         .then(data => data.list)
         .then(dataList => {
-            console.log(dataList);
+            // console.log(dataList);
             return dataList.filter(day => Number(moment.unix(day.dt).format('kk')) === 14);
         })
         .then(days => {

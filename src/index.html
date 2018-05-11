@@ -8,5 +8,47 @@
 </head>
 <body>
     <div id="weather" class="weather-wrap"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
+    <!-- <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC6hQ7AiUH5C4scA8UPU1yqtYWb_hhXxxM",
+            authDomain: "testfbase-4df92.firebaseapp.com",
+            databaseURL: "https://testfbase-4df92.firebaseio.com",
+            projectId: "testfbase-4df92",
+            storageBucket: "testfbase-4df92.appspot.com",
+            messagingSenderId: "103034036295"
+        };
+        
+        firebase.initializeApp(config);
+
+        const ref = firebase.database().ref('history');
+
+        ref.on('value', gotData, errorData);
+
+        function gotData (data) {
+            const temps = data.val();
+            const tempsArray = Object.values(temps);
+            console.log(tempsArray);
+
+            tempsArray.map(akarmi => {
+                console.log(akarmi);
+            });
+        }
+
+        function errorData (data) {
+            console.log('Error');
+            console.log(err);
+        }
+
+        // let data = {
+        //     temp: 22,
+        //     hour: '21'
+        // }
+
+        // ref.push(data);
+
+    </script> -->
 </body>
 </html>

@@ -13,7 +13,7 @@ export default class ThreeHoursForecast extends Component {
     }
 
     componentDidMount () {
-        getThreeHoursForecast('Sunday')
+        getThreeHoursForecast('Friday')
             .then(threeHoursForecast => this.setState({ threeHoursForecast }));
     }
 
@@ -26,7 +26,7 @@ export default class ThreeHoursForecast extends Component {
             );
         }
 
-        console.log(threeHoursForecast);
+        // console.log(threeHoursForecast);
 
         return (
             <section className="three-hours-forecast">
