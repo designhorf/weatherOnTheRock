@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import DailyForecast from './../DailyForecast';
 import { getFiveDaysForecast } from '../../api';
 
-
 export default class FiveDaysForecast extends Component {
     constructor (props) {
         super(props);
@@ -33,7 +32,7 @@ export default class FiveDaysForecast extends Component {
                         <DailyForecast 
                             icon = { day.icon } 
                             temperature = { day.mainTemperature } 
-                            dayString = { day.dayAsString } 
+                            dayString = { day.dayAsString }
                         />
                     )
                 }
