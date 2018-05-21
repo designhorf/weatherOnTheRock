@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import HoursForecast from './../HoursForecast';
 import { getThreeHoursForecast } from '../../api';
+import moment from 'moment';
 
 
 export default class ThreeHoursForecast extends Component {
@@ -13,7 +14,8 @@ export default class ThreeHoursForecast extends Component {
     }
 
     componentDidMount () {
-        getThreeHoursForecast('Friday')
+        const today = moment().format('dddd');
+        getThreeHoursForecast(today)
             .then(threeHoursForecast => this.setState({ threeHoursForecast }));
     }
 
